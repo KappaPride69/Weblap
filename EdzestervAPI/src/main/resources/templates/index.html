@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edzésterv metódusok</title>
+    <style>
+            th, td{
+                border: 1px solid black;
+                margin: 0px;
+            }
+            tr{
+                background-color: rgba(20, 20, 20, 0.2);
+            }
+            tr:hover{
+                background-color: rgba(20, 20, 20, 0.1);
+            }
+            caption{
+                background-color: rgba(20, 20, 20, 0.2);
+                padding: 10px;
+                margin: 5px 0 10px 0;
+                font-weight: bold;
+            }
+            .back-auth{
+                background-color: rgba(240, 0, 0, 0.2);
+            }
+            .back-auth:hover{
+                background-color: rgba(240, 0, 0, 0.1);
+            }
+            a{
+                color: navy;
+            }
+            a:hover{
+                color: black;
+            }
+        </style>
+</head>
+<body>
+<table cellpadding="10">
+    <caption>Edzesterv REST API</caption>
+    <tr>
+        <th>Request method</th>
+        <th>url path</th>
+        <th>web service</th>
+        <th>authorization</th>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/felhasznalok">Felhasználók</a></td>
+        <td>A Felhasználók névsora</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/felhasznalok/2">felhasznalok/{id}</a></td>
+        <td>Egy kiválasztott felhasználó adatai</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/feladatok">Feladatok</a></td>
+        <td>A feladatok listája</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/feladatok/2">feladatok/{id}</a></td>
+        <td>Egy kiválasztott feladat adatai</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/celok">Célok</a></td>
+        <td>A célok listája</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/celok/2">celok/{id}</a></td>
+        <td>Egy kiválasztott cél adatai</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/bemutatok">Bemutatók</a></td>
+        <td>A bemutatók listája</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/bemutatok/2">bemutatok/{id}</a></td>
+        <td>Egy kiválasztott bemutató adatai</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/javasoltak">Javasolt Edzések</a></td>
+        <td>A javasolt edzések listája</td>
+        <td>engedélyezett</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/javasoltak/2">javasoltak/{id}</a></td>
+        <td>Egy kiválasztott javasolt edzés adatai</td>
+        <td>engedélyezett</td>
+    </tr>
+
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>felhasznalok</td>
+        <td>Új felhasználó felvitele</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>felhasznalok/{id}</td>
+        <td>Felhasználó emailjének a módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>felhasznalok/{id}</td>
+        <td>Kiválasztott felhasználó törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+
+
+
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>feladatok</td>
+        <td>Új feladat felvitele</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>feladatok/{id}</td>
+        <td>Feladat leírásának a módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>feladatok/{id}</td>
+        <td>Kiválasztott feladat törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+
+
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>celok</td>
+        <td>Új cél felvitele</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>celok/{id}</td>
+        <td>Cél elérendő súlyának a módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>celok/{id}</td>
+        <td>Kiválasztott cél törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>bemutatok</td>
+        <td>Új bemutató felvitele</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>bemutatok/{id}</td>
+        <td>Bemutató fájl nevének a módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>bemutatok/{id}</td>
+        <td>Kiválasztott bemutató törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+
+    <tr class="back-auth">
+        <td>POST</td>
+        <td>javasoltak</td>
+        <td>Új javasolt edzés felvitele</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>PATCH</td>
+        <td>javasoltak/{id}</td>
+        <td>javasolt edzés időtartamának a módosítása</td>
+        <td>jelszóval védendő</td>
+    </tr>
+    <tr class="back-auth">
+        <td>DELETE</td>
+        <td>javasoltak/{id}</td>
+        <td>Kiválasztott javasolt edzés törlése</td>
+        <td>jelszóval védendő</td>
+    </tr>
+
+</table>
+</body>
+</html>
